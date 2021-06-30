@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en" id="home">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="icons-1.4.1/font/bootstrap-icons.css">
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>My Portofolio</title>
+
+    <style>
+        html{
+            position: relative;
+        }
+        body{
+            margin-bottom: 100px;
+        }
+        .jumbotron{
+            background: url(img/back.jpg) no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: 0 -200px;
+            height: 400px;
+            overflow: hidden;
+        }
+        .jumbotron h1, .jumbotron p{
+            text-shadow: 1px 1px 10px rgba(0,0,0,.5);
+        }
+        .jumbotron img, .portofolio img{
+            width: 200px;
+        }
+        section{
+            min-height: 600px;
+        }
+        .pKiri, .pKanan{
+            opacity: 0;
+            transform: translate(-50px, 0) scale(2) rotate(15deg);
+            transition: 1s;
+        }
+        .pKanan{
+            transform: translate(50px, 0) scale(2) rotate(-15deg);
+        }
+        .pKiri.pMuncul, .pKanan.pMuncul{
+            opacity: 1;
+            transform: translate(0,0);
+        }
+        .overlay{
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,0);
+            z-index: 999;
+            transition: .5s;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .overlay:target{
+            width: auto;
+            height: auto;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,.7);
+        }
+        .overlay img{
+            width: 317px;
+            box-shadow: 2px 2px 7px rgba(0,0,0,.5);
+        }
+        .overlay:target img{
+            animation: zoom 1s;
+        }
+        .overlay .close{
+            position: absolute;
+            top: 10%;
+            left: 48%;
+            color: white;
+            text-decoration: none;
+            background: black;
+            border: 1px solid white;
+            line-height: 14px;
+            padding: 7px;
+            opacity: 0;
+        }
+        .overlay:target .close{
+            animation: tombol .5s .5s forwards;
+        }
+        @keyframes tombol{
+            0%{
+                opacity: 0;
+                margin-top: -20px;
+            }
+            100%{
+                opacity: 1;
+                margin-top: 0;
+            }
+        }
+        @keyframes zoom{
+            0%{
+                transform: scale(0) rotate(0);
+                opacity: 0;
+            }
+            100%{
+                transform: scale(1) rotate(720deg);
+                opacity: 1;
+            }
+        }
+        .contact{
+            min-height: 650px;
+        }
+        .portofolio .img-thumbnail{
+            opacity: 0;
+            transform: translate(0, -40px);
+            transition: 1s;
+        }
+        .portofolio .img-thumbnail.muncul{
+            opacity: 1;
+            transform: translate(0,0);
+        }
+        footer{
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            bottom: 0;
+            background: #333;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand page-scroll" href="#home">Ramadhan</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav">
+
+                <li>
+                    <a class="nav-link page-scroll" href="#about">About</a>
+                </li>
+
+                <li>
+                    <a class="nav-link page-scroll" href="#portofolio">Portofolio</a>
+                </li>
+
+                <li>
+                    <a class="nav-link page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        
+    </nav>
+    <!-- akhir navbar -->
+
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid text-center">
+        <img src="img/saya.jpg" class="rounded-circle img-thumbnail">
+        <h1 class="text-white">Rizky Ramadhani</h1>
+        <p class="text-white">Colleger | Hasyim Asy'ari University</p>
+    </div>
+    <!-- akhir Jumbotron -->
+
+    <!-- about -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="row ">
+                <div class="col-sm-12">
+                    <h2 class="text-center">About</h2>
+                    <hr width="250px" border-top="3px solid #999">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-5 pKiri text-justify">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo vero, veniam quis temporibus, fugit eligendi consequatur a quas fuga animi unde porro error natus?
+                </div>
+                <div class="col-sm-5 pKanan text-justify">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo vero, veniam quis temporibus, fugit eligendi consequatur a quas fuga animi unde porro error natus? A, fugit in consequatur voluptatum temporibus provident dolor architecto accusantium voluptas voluptate asperiores laudantium quaerat necessitatibus porro similique ullam neque eius pariatur quasi quis labore.
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- akhir about -->
+
+
+    <!-- portofolio -->
+    <section class="portofolio bg-light pb-4" id="portofolio">
+        <div class="container">
+            <div class="row pt-3 mb-2">
+                <div class="col-sm-12 text-center">
+                    <h2>Portofolio</h2>
+                    <hr width="250px" border-top="3px solid #999">
+                </div>
+            </div>
+            <div class="row text-center mb-5">
+                <div class="col-sm-4">
+                    <a href="#gambar1">
+                    <img src="img/jeong.jfif" class="rounded-circle img-thumbnail">
+                    </a>
+
+                    <div class="overlay" id="gambar1">
+                        <a href="#portofolio" class="close">Close</a>
+                        <img src="img/full/jeong.jfif" alt="jeong">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#gambar2">
+                    <img src="img/jihyo.jfif" class="rounded-circle img-thumbnail">
+                    </a>
+
+                    <div class="overlay" id="gambar2">
+                        <a href="#portofolio" class="close">Close</a>
+                        <img src="img/full/jihyo.jfif" alt="jeong">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#gambar3">
+                    <img src="img/tzuyu.jfif" class="rounded-circle img-thumbnail">
+                    </a>
+
+                    <div class="overlay" id="gambar3">
+                        <a href="#portofolio" class="close">Close</a>
+                        <img src="img/full/tzuyu.jfif" alt="jeong">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row text-center mb-5">
+                <div class="col-sm-4">
+                    <a href="#gambar4">
+                    <img src="img/momo.jfif" class="rounded-circle img-thumbnail">
+                    </a>
+
+                    <div class="overlay" id="gambar4">
+                        <a href="#portofolio" class="close">Close</a>
+                        <img src="img/full/momo.jfif" alt="jeong">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#gambar5">
+                    <img src="img/nayeon.jfif" class="rounded-circle img-thumbnail">
+                    </a>
+
+                    <div class="overlay" id="gambar5">
+                        <a href="#portofolio" class="close">Close</a>
+                        <img src="img/full/nayeon.jfif" alt="jeong">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#gambar6">
+                    <img src="img/sana.jfif" class="rounded-circle img-thumbnail">
+                    </a>
+
+                    <div class="overlay" id="gambar6">
+                        <a href="#portofolio" class="close">Close</a>
+                        <img src="img/full/sana.jfif" alt="jeong">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- akhir portofolio -->
+
+
+
+    <!-- kontak -->
+    <section class="contact mt-4 pb-4" id="contact">
+        <div class="container">
+            <div class="row pt-4 mb-4">
+                <div class="col-sm-12 text-center">
+                    <h2>Contact</h2>
+                    <hr width="250px" border-top="3px solid #999">
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Contact Us</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, totam?</p>
+                        </div>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><h1>Location</h1></li>
+                        <li class="list-group-item">My Home</li>
+                        <li class="list-group-item">Jl. Raya Kayen No. 56 Kayangan Diwek Jombang</li>
+                        <li class="list-group-item">East Java, Indonesia</li>
+                    </ul>
+                </div>
+                <div class="col-lg-7">
+                    <form>
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" id="nama" placeholder="Masukkan nama anda">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="no">No. Telepon</label>
+                            <input type="number" class="form-control" id="no" placeholder="Masukkan nomor anda">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Masukkan email anda">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="job">Anda adalah seorang:</label>
+                            <select class="form-control" id="job">
+                                <option>--- Pilih ---</option>
+                                <option>Web Design</option>
+                                <option>Web Development</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pesan">Pesan</label>
+                            <textarea class="form-control" id="pesan" placeholder="Masukknan pesan anda"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- akhir kontak -->
+
+
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <p class="text-white pt-3">&copy; Copyright 2021 | built with <i class="bi bi-suit-heart-fill text-danger"></i> by <span class="text-primary">Rizky Ramadhani</span>.</p>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <a href="https://web.facebook.com/rzk.rmdn10/" target="blank"><i class="bi bi-facebook pr-2 text-white"></i></a>
+                    <a href="https://www.instagram.com/rzk_rmdn" target="blank"><i class="bi bi-instagram pr-2 text-white"></i></a>
+                    <a href="https://twitter.com/rzkrmdn10" target="blank"><i class="bi bi-twitter text-white"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- akhir footer -->
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    
+    <script src="js/script.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script> -->
+    
+  </body>
+</html>
